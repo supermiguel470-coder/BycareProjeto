@@ -95,6 +95,7 @@ main h2 {
     font-weight: 900;
 }
 
+/* Organização dos produtos */
 .lista-produtos {
     display: flex;
     justify-content: space-between;
@@ -137,7 +138,6 @@ main h2 {
 }
 
 /* Rodapé */
-
 footer {
     background-color: #66ce77;
     color: rgb(28, 15, 6);
@@ -145,153 +145,25 @@ footer {
     text-align: center;
 }
 
-#rodape p {
+footer p {
     font-size: 20px;
     font-weight: bold;
-    margin: 0;
+    margin: 10px 0;
 }
 
-
-/* para tablet */
-@media (max-width: 768px) {
-
-    /* Navegador */
-    .cabecalho {
-        padding: 10px;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .logo {
-        width: 120px;
-    }
-
-    .botoes {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .button {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-
-    /* Anúncio */
-    .container {
-        height: auto;
-        min-height: 320px;
-        padding-left: 20px;
-    }
-
-    .imagemJade {
-        width: 45%;
-        height: auto;
-    }
-
-    .textAnuncio {
-        width: 55%;
-    }
-
-    .anuncio {
-        font-size: 24px;
-    }
-
-    .anuncioProduto {
-        font-size: 18px;
-    }
-
-    /* Produtos */
-    main {
-        padding: 20px;
-    }
-
-    .lista-produtos {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .produto {
-        flex: 1 1 calc(50% - 15px);
-    }
-
-    .produto img {
-        max-width: 150px;
-        height: 150px;
-    }
-
-    .produto h3 {
-        font-size: 18px;
-    }
+footer h3 {
+    color: rgb(129, 30, 199);
 }
 
-/* para celular */
-@media (max-width: 480px) {
+footer a {
+    color: rgb(129, 30, 199);
+    text-decoration: none;
+}
 
-    /* Navegador */
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
+footer a:hover {
+    text-decoration: underline;
+}
 
-    .botoes {
-        justify-content: center;
-    }
-
-    /* Anúncio */
-    .container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 25px 20px 0;
-        height: auto;
-    }
-
-    .textAnuncio {
-        width: 100%;
-    }
-
-    .imagemJade {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-        align-self: center;
-        margin-top: 15px;
-    }
-
-    .anuncio {
-        font-size: 22px;
-    }
-
-    .anuncioProduto {
-        font-size: 18px;
-    }
-
-    /* Produtos */
-    main h2 {
-        font-size: 26px;
-    }
-
-    .lista-produtos {
-        flex-direction: column;
-    }
-
-    .produto {
-        width: 100%;
-    }
-
-    .produto img {
-        max-width: 180px;
-        height: 180px;
-    }
-
-    /* Rodapé */
-    footer {
-        padding: 15px;
-    }
-
-    #rodape p {
-        font-size: 16px;
-    }
+#miniTexto p {
+    font-size: 16px;
 }
