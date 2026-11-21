@@ -23,9 +23,38 @@
                     <button class="combos">Combos</button>
                 </a>
 
-                <a href="categorias.html">
-                    <button class="categorias">Categorias</button>
-                </a>
+                <div class="dropdown">
+
+                    <button @click="menuAberto = !menuAberto" class="categorias" type="button">
+                        Categorias
+                        <span class="seta">▼</span>
+                    </button>
+
+                    <div class="dropdown-menu" v-show="menuAberto">
+
+                        <a href="#" class="categoria-card">
+                            <h3>Maquiagem</h3>
+                            <p>Produtos de maquiagem</p>
+                        </a>
+
+                        <a href="#" class="categoria-card">
+                            <h3>Skincare</h3>
+                            <p>Cuidados com a pele</p>
+                        </a>
+
+                        <a href="#" class="categoria-card">
+                            <h3>Cabelos</h3>
+                            <p>Produtos capilares</p>
+                        </a>
+
+                        <a href="#" class="categoria-card">
+                            <h3>Perfumes</h3>
+                            <p>Fragrâncias e aromas</p>
+                        </a>
+
+                    </div>
+
+                </div>
 
                 <a href="#contato">
                     <button class="contato">Contato</button>
