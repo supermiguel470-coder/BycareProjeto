@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bycare</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
+</head>
+<body>
+    <div id="app">
+    <header class="cabecalho">
+        <nav>
+            <img class="logo" src="../img/LogoBycare.png" alt="Logo da Bycare">
+
+        <div class="botoes">
+            <a href="index.html">
+                <button class="button">Início</button>
+            </a>
+
+            <a href="combos.html">
+                <button class="button">Combos</button>
+            </a>
+
+            <a href="categorias.html">
+                <button class="button">Categorias</button>
+            </a>
+
+            <a href="#">
+                <button class="button">Contatos</button>
+            </a>
+
+            <carrinho-painel></carrinho-painel>
+        </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="textAnuncio">
+
+            <h2 class="anuncio">LANÇAMENTO</h2>
+            <h3 class="anuncioProduto">Rotina de skin care Jade Picon</h3>
+            <h3>Conheça os favoritos da Jade Picon</h3>
+            <button class="buttonAnuncio">Comprar</button>
+        </div>
+        <img class="imagemJade" src="../img/Jade Picon.png" alt="Imagem de uma mulher">
+    </div>
+
+    <main>
+        <h2>Os mais escolhidos</h2>
+        <ul class="lista-produtos">
+            <li class="produto" v-for="p in maisEscolhidos" :key="p.id">
+                <div>
+                    <img :src="imagem(p.imagem)" :alt="p.nome">
+                    <h3>{{ p.nome }}</h3>
+                    <p>{{ preco(p.preco) }}</p>
+                    <button class="btn-comprar" :class="{ adicionado: adicionado(p.id) }" @click="adicionar(p)">{{ adicionado(p.id) ? 'Adicionado ✓' : 'Adicionar ao carrinho' }}</button>
+                </div>
+            </li>
+        </ul>
+    </main>
+    <footer class="rodape">
+        <div id="endereco">
+            <p>Av. Engenheiro Luís Carlos Berrini, 1120 - Itaim Bibi</p>
+        </div>
+        <div id="contato">
+            <h3>Contato</h3>
+            <a>bycareofc@hotmail.com</a>
+        </div>
+
+        <div id="miniTexto">
+            <p>Bycare — beleza e cuidado para a sua rotina.</p>
+        </div>
+    </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js"></script>
+    <script src="../js/dados.js"></script>
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>
