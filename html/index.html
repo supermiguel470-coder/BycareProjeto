@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bycare</title>
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
 </head>
 <body>
+    <div id="app">
     <header class="cabecalho">
         <nav>
             <img class="logo" src="../img/LogoBycare.png" alt="Logo da Bycare">
@@ -27,6 +29,8 @@
             <a href="#">
                 <button class="button">Contatos</button>
             </a>
+
+            <carrinho-painel></carrinho-painel>
         </div>
         </nav>
     </header>
@@ -45,41 +49,16 @@
 
     <main>
         <h2>Os mais escolhidos</h2>
-<ul class="lista-produtos">
-
-    <li class="produto">
-        <div>
-            <img src="../img/esfoliante4.png" alt="Esfoliante ByCare">
-            <h3>Esfoliante ByCare</h3>
-            <p>R$ 37,59</p>
-        </div>
-    </li>
-
-    <li class="produto">--
-        <div>
-            <img src="../img/hidratacao1.png" alt="Loção hidratante ByCare">
-            <h3>Loção Hidratante ByCare</h3>
-            <p>R$ 58,29</p>
-        </div>
-    </li>
-
-    <li class="produto">
-        <div>
-            <img src="../img/protecao1.png" alt="Produto de proteção ByCare">
-            <h3>Protetor ByCare</h3>
-            <p>R$ 37,59</p>
-        </div>
-    </li>
-
-    <li class="produto">
-        <div>
-            <img src="../img/tonico2.png" alt="Tônico ByCare">
-            <h3>Tônico ByCare</h3>
-            <p>R$ 37,59</p>
-        </div>
-    </li>
-
-</ul>
+        <ul class="lista-produtos">
+            <li class="produto" v-for="p in maisEscolhidos" :key="p.id">
+                <div>
+                    <img :src="imagem(p.imagem)" :alt="p.nome">
+                    <h3>{{ p.nome }}</h3>
+                    <p>{{ preco(p.preco) }}</p>
+                    <button class="btn-comprar" :class="{ adicionado: adicionado(p.id) }" @click="adicionar(p)">{{ adicionado(p.id) ? 'Adicionado ✓' : 'Adicionar ao carrinho' }}</button>
+                </div>
+            </li>
+        </ul>
     </main>
     <footer class="rodape">
         <div id="endereco">
@@ -94,5 +73,11 @@
             <p>Bycare — beleza e cuidado para a sua rotina.</p>
         </div>
     </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.prod.js"></script>
+    <script src="../js/dados.js"></script>
+    <script src="../js/carrinho.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 </html>

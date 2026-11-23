@@ -1,0 +1,19 @@
+/* Complemento do combos.css para a página de categorias */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.filtros .button.ativo {
+    background-color: #5c3967;
+    border-color: #5c3967;
+    color: #fff;
+}
+
+/* 4 produtos por linha, quebrando para a linha de baixo */
+.lista-produtos.grade {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
